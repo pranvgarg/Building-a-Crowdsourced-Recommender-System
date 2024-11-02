@@ -4,7 +4,8 @@
 
 This project is part of the MSBA F2024 course assignment, aimed at developing a recommender system for craft beers using reviews from BeerAdvocate. The goal is to recommend products based on user-defined attributes, leveraging natural language processing (NLP) and data analysis.
 
-📅 Project Details
+
+📅 Assignment Details
 
 Objective: Build the foundational elements of a crowdsourced recommender system.
 
@@ -64,7 +65,9 @@ Objective: Build the foundational elements of a crowdsourced recommender system.
 
 Required Libraries
 
-!pip install selenium spacy nltk
+Ensure you have the required libraries installed:
+
+pip install selenium spacy nltk pandas numpy matplotlib scikit-learn
 !python -m spacy download en_core_web_sm
 !python -m spacy download en_core_web_md
 
@@ -80,52 +83,66 @@ from sklearn.metrics.pairwise import cosine_similarity
 import spacy
 from selenium import webdriver
 
-Preprocessing Steps
+🚀 How to Run
 
-	1.	Web Scraping: Use Selenium to extract reviews.
-	2.	Text Cleaning: Tokenize and clean review data using NLTK and Python string manipulation.
-	3.	Vectorization: Apply TF-IDF vectorization for similarity analysis.
-	4.	NLP Model: Use spaCy for advanced NLP tasks.
+Step-by-Step Guide
 
-🏆 Key Outputs
+	1.	Clone the Repository
+Open your terminal or command prompt and run:
 
-	•	Data Files:
-	•	beer_reviews.csv containing product_name, product_review, and user_rating.
-	•	analysis_output.csv with product_name, product_review, similarity_score, and sentiment_score.
-	•	Tables and Visualizations: Display top recommendations, analysis charts, and comparison results.
+git clone https://github.com/pranvgarg/Building-a-Crowdsourced-Recommender-System.git
+cd Building-a-Crowdsourced-Recommender-System
 
-🔍 Example Code Snippets
 
-Cosine Similarity Calculation
+	2.	Set Up the Python Environment
+Create and activate a virtual environment:
 
-vectorizer = TfidfVectorizer()
-tfidf_matrix = vectorizer.fit_transform(reviews)
-cosine_sim = cosine_similarity(tfidf_matrix, user_input_vector)
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
 
-Sentiment Analysis
 
-sid = SentimentIntensityAnalyzer()
-review['sentiment_score'] = review['product_review'].apply(lambda x: sid.polarity_scores(x)['compound'])
+	3.	Install Dependencies
+Run the following command:
+
+pip install -r requirements.txt
+
+	If requirements.txt is unavailable, manually install dependencies:
+
+pip install pandas numpy matplotlib nltk spacy selenium scikit-learn
+!python -m spacy download en_core_web_sm
+!python -m spacy download en_core_web_md
+
+
+	4.	Run the Python Notebook
+Start Jupyter Notebook:
+
+jupyter notebook
+
+Open main_notebook.ipynb and execute the cells sequentially.
+
+	5.	Input Product Attributes
+Locate the user input cell in the notebook:
+	•	Enter three attributes (e.g., “Balanced,” “Fruity,” “Robust”).
+	•	Run the cell to proceed with similarity and sentiment analysis.
+	6.	Generate Recommendations
+	•	Execute cells to compute similarity and sentiment scores.
+	•	View the top 3 recommended products based on the evaluation score.
+	7.	Analyze Outputs
+	•	Review generated tables showing product_name, product_review, similarity_score, and sentiment_score.
+	•	Check visualizations for better insights into recommendation results.
+	8.	Optional: Use Word Vectors
+	•	Run the cell that evaluates word vectors (e.g., spaCy) for an alternative recommendation approach.
+	•	Compare results to the bag-of-words model to assess any differences.
+	9.	Export Results
+Save the final recommendations to a CSV file or review them directly in the notebook.
 
 📈 Analysis & Insights
 
-	•	Bag-of-Words vs Word Vectors: Discuss differences in recommendations and attribute coverage.
-	•	Top Rated Products: Evaluate if top-rated beers align with user-specified preferences.
+	•	Bag-of-Words vs Word Vectors: Highlight differences and attribute coverage across approaches.
+	•	Top-Rated vs Evaluated Products: Analyze how recommendations align with user-specified needs.
 
-🎨 Visuals
-
-Include relevant tables, plots, or images here for clarity.
-
-🚀 How to Run
-
-	1.	Clone the repository.
-	2.	Run the Python notebook.
-	3.	Input desired product attributes.
-	4.	Generate and view recommendations.
 
 📚 Future Work
 
-	•	Expand to other product categories.
-	•	Integrate more sophisticated NLP models.
-
-Ensure you upload any visual results to a GitHub images folder and reference them using Markdown image syntax, e.g., ![alt text](images/sample-chart.png) for seamless GitHub integration.
+	•	Broaden to other product types.
+	•	Integrate more advanced NLP models.
