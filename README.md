@@ -2,8 +2,11 @@
 
 📝 Project Overview
 
-This project is part of the MSBA F2024 course assignment, aimed at developing a recommender system for craft beers using reviews from BeerAdvocate. The goal is to recommend products based on user-defined attributes, leveraging natural language processing (NLP) and data analysis.
+This project is aimed at developing a recommender system for craft beers using reviews from BeerAdvocate. The goal is to recommend products based on user-defined attributes, leveraging natural language processing (NLP) and data analysis.
 
+👥 Team Members
+- Ronak Goyal
+- Pranav Garg
 
 📅 Assignment Details
 
